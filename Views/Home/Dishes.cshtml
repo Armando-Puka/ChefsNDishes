@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Dishes";
+}
+
+@model Dish
+
+<h3 class="text-center border-bottom border-dark border-2 pb-3">Yum, take a look at our tasty dishes!</h3>
+
+<table class="table table-striped table-bordered mt-4">
+    <thead>
+        <th>Name</th>
+        <th>Chef</th>
+        <th>Tastiness</th>
+        <th>Calories</th>
+    </thead>
+
+    <tbody>
+        @foreach(var dishes in ViewBag.AllDishes)
+        {
+            <tr>
+                <td>@dishes.DishName</td>
+                <td>@dishes.Chef.FirstName @dishes.Chef.LastName</td>
+                <td>@dishes.DishTastiness</td>
+                <td>@dishes.DishCalories</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Chef
+
+<h3 class="text-center border-bottom border-dark border-2 pb-3">Check out our roster of Chefs!</h3>
+
+<table class="table table-striped table-bordered mt-4">
+    <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th># of Dishes</th>
+    </thead>
+
+    <tbody>
+        @foreach(var chef in ViewBag.AllChefs)
+        {
+            <tr>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@chef.Age</td>
+                <td>@chef.AllDishes.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
